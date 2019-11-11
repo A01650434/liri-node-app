@@ -47,7 +47,7 @@ function spotifyThisSong(value){
         console.log("Song undifined");
 
     spotify
-  .request('#faltalink*')
+  .request("https://api.spotify.com/v1/tracks/0hrBpAOgrt8RXigk83LLNE")
   .then(function(data) {
     //results
     var artist = data.artist[0].name;
@@ -70,7 +70,7 @@ function spotifyThisSong(value){
     }else{
         // delimitate results 
         spotify
-        .search({ type: 'track', query: "Want it That Way", limit: 1})
+        .search({ type: 'track', query: value, limit: 1})
         .then(function(data) {
             var artist = data.tracks.items[0].artist[0].name;
             var songName = data.tracks.items[0].name;
