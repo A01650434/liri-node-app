@@ -3,7 +3,7 @@ require ("dotenv").config();
 //variables 
 var axios = require("axios"); 
 var fs = require ("fs");
-var moment = r4equire ("moment");
+var moment = require ("moment");
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify)
 var keys = require("./keys.js"); //ns
@@ -14,7 +14,7 @@ var value = process.argv.slice(3).join(" ");
 switch(act){
     case "concert-this":
         console.log("Concert this: ");
-        consertThis(value);
+        concertThis(value);
         break;
     
     case "spotify-this-song":
@@ -142,13 +142,13 @@ function doWhatItSays(value){
         } else {
         var dataArr = data.split(" ,");
         //Array actions
-        var action = dataArr[0];
+        var act = dataArr[0];
         var value = dataArr[1];
 
         switch(act){
             case "concert-this":
                 console.log("Concert this: ");
-                consertThis(value);
+                concertThis(value);
                 break;
             
             case "spotify-this-song":
